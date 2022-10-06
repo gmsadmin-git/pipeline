@@ -1,6 +1,9 @@
 pipeline {
     agent any
-
+    parameters {
+                string description: 'Enter the Git repo name to be created', name: 'reponame', trim: true
+                password defaultValue: '', description: 'Enter password got your Git repository', name: 'password'
+                }
     stages {
         stage('Jayesh') {
             steps {
