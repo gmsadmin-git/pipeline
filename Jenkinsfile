@@ -11,7 +11,8 @@ pipeline {
             steps {
                 echo "Jayesh Building.."
                 echo "Reponame is ${reponame}"
-                echo "Reponame is ${password}"
+                echo "USS path is ${usspath}"
+                echo "USS path is ${usrname}"
                   }
         }
         stage('Srini') {
