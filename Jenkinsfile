@@ -9,16 +9,16 @@ pipeline {
     stages {
         stage('Jayesh') {
             steps {
-                echo "Jayesh Building.."
+/*                echo "Jayesh Building.."
                 echo "Reponame is ${reponame}"
                 echo "USS path is ${usspath}"
-                echo "Git user name is ${usrname}"
+                echo "Git user name is ${usrname}" */
                 sh '''
                     #!/bin/bash
                     temp=$(curl -X POST -u jayespat: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 https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
-                   '''       
-                echo $temp
+                    echo $temp
+                  '''  
                   }
         }
         stage('Srini') {
