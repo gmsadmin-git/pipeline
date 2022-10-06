@@ -23,9 +23,12 @@ pipeline {
                   '''  
                   }
         }
-        stage('Srini') {
+        stage('Clone to USS') {
             steps {
-                echo 'Srini Testing..'
+               dir('/home/ubuntu') { // or absolute path
+                  sh '/home/ubuntu'
+               }
+                   echo 'Srini Testing..'
             }
         }
         stage('Paul') {
