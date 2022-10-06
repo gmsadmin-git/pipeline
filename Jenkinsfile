@@ -24,7 +24,9 @@ pipeline {
         stage('Clone to USS') {
             steps {
                dir('/home/ubuntu') { // or absolute path
-                  sh '/home/ubuntu'
+                  sh '''
+                  git clone $temp
+                  '''
                }
                    echo 'Srini Testing..'
             }
