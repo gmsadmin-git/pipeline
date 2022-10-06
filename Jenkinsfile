@@ -7,10 +7,10 @@ pipeline {
       password defaultValue: '', description: 'Enter password got your Git repository', name: 'password'
     }
     stages {
-        stage('Jayesh') {
+        stage('Create New Repo') {
             steps {
-/*                echo "Jayesh Building.."
-                echo "Reponame is ${reponame}"
+                echo "Creating new repo ${reponame}"
+/*                echo "Reponame is ${reponame}"
                 echo "USS path is ${usspath}"
                 echo "Git user name is ${usrname}" */
                 sh '''
@@ -18,6 +18,8 @@ pipeline {
                     temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
                     echo $temp
+                    cd $usspath
+                    pwd
                   '''  
                   }
         }
