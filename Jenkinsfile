@@ -7,9 +7,9 @@ pipeline {
     stages {
         stage('Jayesh') {
             steps {
-                echo 'Jayesh Building..'
-                echo 'Reponame is ${name}'
-                echo 'Password is ${password}'
+                echo "Jayesh Building.."
+                echo "Reponame is ${name}"
+                echo "Password is ${password}"
             }
         }
         stage('Srini') {
