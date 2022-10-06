@@ -13,8 +13,11 @@ pipeline {
                 echo "Reponame is ${reponame}"
                 echo "USS path is ${usspath}"
                 echo "Git user name is ${usrname}"
-                temp=$(curl -X POST -u $usrname : $password https://api.github.com/user/repos \
-                       -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
+                sh '''
+                    #!/bin/bash
+                    temp=$(curl -X POST -u $usrname : $password https://api.github.com/user/repos \
+                          -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
+                   '''       
                 echo $temp
                   }
         }
