@@ -8,7 +8,7 @@ pipeline {
         stage('Jayesh') {
             steps {
                 echo "Jayesh Building.."
-                echo "Reponame is ${param.name}"
+                echo "Reponame is $name "
                   }
         }
         stage('Srini') {
