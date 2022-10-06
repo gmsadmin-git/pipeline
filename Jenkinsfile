@@ -12,7 +12,7 @@ pipeline {
                 echo "Jayesh Building.."
                 echo "Reponame is ${reponame}"
                 echo "USS path is ${usspath}"
-                echo "USS path is ${usrname}"
+                echo "Git user name is ${usrname}"
                   }
         }
         stage('Srini') {
