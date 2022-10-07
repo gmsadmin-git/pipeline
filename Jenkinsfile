@@ -13,26 +13,17 @@ pipeline {
         stage('Create New Repo') {
             steps {
                 echo "Creating new repo ${reponame}"
-/*              echo "Reponame is ${reponame}"
-                echo "USS path is ${usspath}"
-                echo "Git user name is ${usrname}" */
                 sh '''
                     #!/bin/bash
                     temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
-                    echo $temp      
-                  '''  
-                  }
+                    '''  
+            }
         }
         stage('Clone to USS') {
             steps {
 //               dir('/home/ubuntu') { // or absolute path
-//                sh '''
-                  echo "New Git repo is ${temp}"
-//                  git clone $temp
-//                  '''
-//               }
-                   echo 'Srini Testing..'
+                 sh 'echo "New Git repo is ${temp}"'
             }
         }
         stage('End') {
