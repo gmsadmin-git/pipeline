@@ -24,7 +24,7 @@ pipeline {
         stage('Clone to USS') {
             steps {
 //               dir('/home/ubuntu') { // or absolute path
-                 sh 'echo "${repo}"'
+                 sh 'echo "Printing reponame again ${repo}"'
             }
         }
         stage('End') {
