@@ -18,6 +18,7 @@ pipeline {
                     temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
                     echo $temp
+                    git clone $temp
                   '''  
                   }
         }
@@ -26,7 +27,7 @@ pipeline {
 //               dir('/home/ubuntu') { // or absolute path
                 sh '''
                   echo "New Git repo is ${temp}"
-                  git clone $temp
+//                  git clone $temp
                   '''
 //               }
                    echo 'Srini Testing..'
