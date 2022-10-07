@@ -2,8 +2,8 @@ pipeline {
     agent any
     parameters {
       string description: 'Enter the Git repo name to be created', name: 'reponame', trim: true
-      string description: 'Enter the USS path', name: 'usspath', trim: true
-      string description: 'Enter your git username', name: 'usrname', trim: true
+      string defaultValue: '/home/ubuntu',description: 'Enter the USS path', name: 'usspath', trim: true
+      string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'usrname', trim: true
       password defaultValue: '', description: 'Enter password got your Git repository', name: 'password'
     }
     stages {
