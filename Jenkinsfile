@@ -27,7 +27,7 @@ pipeline {
             steps {
 //               dir('/home/ubuntu') { // or absolute path
                 sh 'echo "Printing reponame again ${reponame}"'
-                sh 'echo "repo1 is "${repo1}"'
+                sh 'echo "repo1 is ${repo1}"'
             }
         }
         stage('End') {
