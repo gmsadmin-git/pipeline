@@ -15,10 +15,10 @@ pipeline {
                 echo "Git user name is ${usrname}" */
                 sh '''
                     #!/bin/bash
-                    temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
+                    env.temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
-                    echo $temp
-                    git clone $temp
+                    echo $env.temp
+//                    git clone $env.temp
                   '''  
                   }
         }
@@ -26,7 +26,7 @@ pipeline {
             steps {
 //               dir('/home/ubuntu') { // or absolute path
                 sh '''
-                  echo "New Git repo is ${temp}"
+                  echo "New Git repo is ${env.temp}"
 //                  git clone $temp
                   '''
 //               }
