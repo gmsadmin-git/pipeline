@@ -5,6 +5,7 @@ pipeline {
       string defaultValue: '/home/ubuntu',description: 'Enter the USS path', name: 'usspath', trim: true
       string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'usrname', trim: true
       password defaultValue: '', description: 'Enter password got your Git repository', name: 'password'
+      string defaultValue: '',name: 'temp', trim: true
     }
     stages {
         stage('Create New Repo') {
@@ -15,7 +16,7 @@ pipeline {
                 echo "Git user name is ${usrname}" */
                 sh '''
                     #!/bin/bash
-                    env.temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
+                    temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                           -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
 //                    echo $env.temp
 //                    git clone $env.temp
