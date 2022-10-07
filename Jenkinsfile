@@ -1,3 +1,4 @@
+def repo1=''
 pipeline {
     agent any
     parameters {
@@ -7,7 +8,7 @@ pipeline {
       password defaultValue: '', description: 'Enter password got your Git repository', name: 'password'
       }
     environment {
-      repo = ''
+      repo=''
       }  
     stages {
         stage('Create New Repo') {
@@ -18,6 +19,7 @@ pipeline {
                    temp=$(curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                          -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*")
                    repo=$temp
+                   repo1="Jayesh"
                 '''  
             }
         }
@@ -25,6 +27,7 @@ pipeline {
             steps {
 //               dir('/home/ubuntu') { // or absolute path
                 sh 'echo "Printing reponame again ${reponame}"'
+                sh 'echo "repo1 is "${repo1}"'
             }
         }
         stage('End') {
