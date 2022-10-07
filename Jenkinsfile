@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Clone to USS') {
             steps {
-               dir('/home/ubuntu') { // or absolute path
+/*               dir('/home/ubuntu') { // or absolute path
                sh '''
                   echo "New Git repo is ${temp}"
                   git clone $temp
@@ -32,7 +32,7 @@ pipeline {
                    echo 'Srini Testing..'
             }
         }
-        stage('Paul') {
+        stage('End') {
             steps {
                 echo 'Paul Deploying....'
             }
