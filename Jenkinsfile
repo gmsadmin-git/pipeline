@@ -24,6 +24,11 @@ pipeline {
                 }
                 echo "${env.Newurl}"
                 sh 'echo "Printing reponame again ${reponame}"'
+				sh "pwd"
+                dir('/home/ubuntu') {
+                  sh "pwd"
+                }
+                sh "pwd"
             }
         }
         stage('End') {
