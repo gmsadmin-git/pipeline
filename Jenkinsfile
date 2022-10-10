@@ -28,6 +28,7 @@ pipeline {
 				sh "mkdir tempclone"
                 dir('/var/lib/jenkins/workspace/jenkinsfiletrial/tempclone') {
                   sh "pwd"
+				  sh "git clone ${env.Newurl}"
                 }
                 sh "pwd"
             }
