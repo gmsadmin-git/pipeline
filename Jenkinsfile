@@ -25,8 +25,8 @@ pipeline {
                 echo "${env.Newurl}"
                 sh 'echo "Printing reponame again ${reponame}"'
 				sh "pwd"
-				sh "mkdir tempclone"
-                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/tempclone') {
+				sh "mkdir tempclone1"
+                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/tempclone1') {
                   sh "pwd"
 				  sh "git clone ${env.Newurl}"
 				  sh "ls -l"
