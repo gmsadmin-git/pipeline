@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
-                    -d '{"name": "'$reponame'","description":"Test","public":"false","files":{"file1.txt":{"content":"Demo"}}' | grep -m 1 clone \
+                    -d '{"name": "'$reponame'","description":"Test","auto_init":"true","public":"false","files":{"file1.txt":{"content":"Demo"}}' | grep -m 1 clone \
 					| grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                 '''  
             }
@@ -26,7 +26,7 @@ pipeline {
                 echo "${env.Newurl}"
                 sh 'echo "Printing reponame again ${reponame}"'
 				sh "pwd"
-				sh "mkdir tempclone1"
+				sh "mkdir tempclone2"
                 dir('/var/lib/jenkins/workspace/jenkinsfiletrial/tempclone1') {
                   sh "pwd"
 				  sh "git clone ${env.Newurl}"
