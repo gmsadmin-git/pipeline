@@ -13,7 +13,8 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
-                    -d '{"name": "'$reponame'","description":"Test","auto_init":"true","public":"false","files":{"file1.txt":{"content":"Demo"}}' | grep -m 1 clone \
+                    -d '{"name": "'$reponame'","description":"Creating new repository '$reponame'", \
+					"auto_init":"true","public":"false"}' | grep -m 1 clone \
 					| grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                 '''  
             }
