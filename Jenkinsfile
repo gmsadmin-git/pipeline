@@ -10,9 +10,10 @@ pipeline {
         stage('Create New Repo') {
             steps {
                 echo "Creating new repo ${reponame}"
-				withCredentials([usernamePassword(credentialsId: 'c0709752-3175-44f0-8833-dcd1fa3be884', passwordVariable: 'token', usernameVariable: 'usr')]) {
+//				withCredentials([usernamePassword(credentialsId: 'c0709752-3175-44f0-8833-dcd1fa3be884', passwordVariable: 'token', usernameVariable: 'usr')]) {
+                withCredentials([gitUsernamePassword(credentialsId: 'MyGitHub', gitToolName: 'Default')]) {
                     sh '''
-                       curl -X POST -u ${usr}:${password} https://api.github.com/user/repos \
+                       curl -X POST -u https://api.github.com/user/repos \
                        -d '{"name": "'$reponame'","description":"Creating new repository '$reponame'", \
 					   "auto_init":"true","public":"false"}' | grep -m 1 clone \
 					   | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
