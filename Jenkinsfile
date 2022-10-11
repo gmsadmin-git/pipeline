@@ -28,14 +28,14 @@ pipeline {
                 }
                 echo "${env.Newurl}"
 				sh "pwd"
-				sh "rm -r '$RepoName'"
-				sh "mkdir '$RepoName'"
-                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/${RepoName}') {
-                  sh "pwd"
+//				sh "rm -r '$RepoName'"
+//				sh "mkdir '$RepoName'"
+//                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/${RepoName}') {
+//                  sh "pwd"
 				  sh "git clone ${env.Newurl}"
-				  sh "ls -l"
-                }
-                sh "pwd"
+//				  sh "ls -l"
+//                }
+//                sh "pwd"
             }
         }
         stage('End') {
