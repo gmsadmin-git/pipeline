@@ -13,7 +13,7 @@ pipeline {
                 sh '''
                    #!/bin/bash
                    curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
-                    -d '{"name": "'$reponame'"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
+                    -d '{"name": "'$reponame'","description":"Test","public":"false"}' | grep -m 1 clone | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                 '''  
             }
         }
