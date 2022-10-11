@@ -22,7 +22,7 @@ pipeline {
 //				}	
             }
         }
-        stage('Clone to USS') {
+        stage('Clone Repo to USS') {
 // Jayesh - Update the script to change the user who can access the desired path on USS from Jenkins credentials
             steps {
                 script {
@@ -40,7 +40,7 @@ pipeline {
 //                sh "pwd"
             }
         }
-        stage('End') {
+        stage('Migrate from Mainframe') {
 // Jayesh - Switch the path to migrate file and trigger migration from MF to USS
 // Test this by creating a sepearate shell script
             steps {
