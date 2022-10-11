@@ -11,6 +11,7 @@ pipeline {
         stage('Create New Repo') {
             steps {
                 echo "Creating new repo ${RepoName}"
+// Jayesh - Update the script to use credentials as secret from Jenkins and not display the same in logs				
 //				withCredentials([usernamePassword(credentialsId: 'c0709752-3175-44f0-8833-dcd1fa3be884', passwordVariable: 'TOKEN1', usernameVariable: 'USER')]) {
                     sh '''
                        curl -X POST -u ${USER}:${TOKEN} https://api.github.com/user/repos \
@@ -22,6 +23,7 @@ pipeline {
             }
         }
         stage('Clone to USS') {
+// Jayesh - Update the script to change the user who can access the desired path on USS from Jenkins credentials
             steps {
                 script {
                     env.Newurl = readFile 'temp.txt'
@@ -39,6 +41,8 @@ pipeline {
             }
         }
         stage('End') {
+// Jayesh - Switch the path to migrate file and trigger migration from MF to USS
+// Test this by creating a sepearate shell script
             steps {
                 echo 'Deploying....'
             }
