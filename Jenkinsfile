@@ -18,7 +18,7 @@ pipeline {
 					   "auto_init":"true","public":"'$PublicRepo'"}' | grep -m 1 clone \
 					   | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                     '''
-				}	
+//				}	
             }
         }
         stage('Clone to USS') {
