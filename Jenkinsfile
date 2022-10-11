@@ -27,10 +27,10 @@ pipeline {
                     env.Newurl = readFile 'temp.txt'
                 }
                 echo "${env.Newurl}"
-                sh 'echo "Printing RepoName again ${RepoName}"'
 				sh "pwd"
-				sh "mkdir tempclone2"
-                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/tempclone1') {
+				sh "rm -r '$RepoName'"
+				sh "mkdir '$RepoName'"
+                dir("/var/lib/jenkins/workspace/jenkinsfiletrial/$'$RepoName'") {
                   sh "pwd"
 				  sh "git clone ${env.Newurl}"
 				  sh "ls -l"
