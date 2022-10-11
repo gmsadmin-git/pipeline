@@ -3,7 +3,7 @@ pipeline {
     parameters {
       string description: 'Enter the name for new Git repo', name: 'RepoName', trim: true
       string defaultValue: '/home/ubuntu',description: 'Workspace on USS', name: 'Workspace', trim: true
-//      string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'usrname', trim: true
+      string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'USER', trim: true
       password defaultValue: '', description: 'Enter TOKEN for your Git repository', name: 'TOKEN'
 	  choice choices: ['true', 'false'], name: 'PublicRepo'
       }
