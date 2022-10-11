@@ -10,13 +10,12 @@ pipeline {
         stage('Create New Repo') {
             steps {
                 echo "Creating new repo ${reponame}"
-                sh '''
-                   #!/bin/bash
+                sh '
                    curl -X POST -u Jayesh-Graytitude:${password} https://api.github.com/user/repos \
                     -d '{"name": "'$reponame'","description":"Creating new repository '$reponame'", \
 					"auto_init":"true","public":"false"}' | grep -m 1 clone \
 					| grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
-                '''  
+                '  
             }
         }
         stage('Clone to USS') {
