@@ -24,6 +24,7 @@ pipeline {
         }
         stage('Clone Repo to USS') {
 // Jayesh - Update the script to change the user who can access the desired path on USS from Jenkins credentials
+// Also add logic to clone private repos using the credentials
             steps {
                 script {
                     env.Newurl = readFile 'temp.txt'
