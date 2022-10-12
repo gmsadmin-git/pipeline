@@ -32,11 +32,11 @@ pipeline {
 				sh "pwd"
 //				sh "rm -r '$RepoName'"
 //				sh "mkdir '$RepoName'"
-//                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/${RepoName}') {
+                  dir('/tmp/jenkins-temp') {
 //                  sh "pwd"
 				  sh "git clone ${env.Newurl}"
 //				  sh "ls -l"
-//                }
+                  }
 //                sh "pwd"
             }
         }
