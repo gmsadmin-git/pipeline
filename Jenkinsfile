@@ -2,7 +2,7 @@ pipeline {
     agent any
     parameters {
       string description: 'Enter the name for new Git repo', name: 'RepoName', trim: true
-      string defaultValue: '/home/ubuntu',description: 'Workspace on USS', name: 'Workspace', trim: true
+      string defaultValue: '/tmp/jenkins-temp',description: 'Workspace on USS', name: 'Workspace', trim: true
       string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'USER', trim: true
       password defaultValue: '', description: 'Enter TOKEN for your Git repository', name: 'TOKEN'
 	  choice choices: ['true', 'false'], name: 'PublicRepo'
@@ -32,10 +32,10 @@ pipeline {
 				sh "pwd"
 //				sh "rm -r '$RepoName'"
 //				sh "mkdir '$RepoName'"
-                  dir('/tmp/jenkins-temp') {
+                  dir('$Workspace') {
 //                  sh "pwd"
-				  sh "git clone ${env.Newurl}"
-//				  sh "ls -l"
+				    sh "git clone ${env.Newurl}"
+//				    sh "ls -l"
                   }
 //                sh "pwd"
             }
