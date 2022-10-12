@@ -30,15 +30,15 @@ pipeline {
                     env.Newurl = readFile 'temp.txt'
                 }
                 echo "${env.Newurl}"
-				sh "pwd"
+		sh "pwd"
 //				sh "rm -r '$RepoName'"
 //				sh "mkdir '$RepoName'"
-//                dir('/var/lib/jenkins/workspace/jenkinsfiletrial/${RepoName}') {
-//                  sh "pwd"
-				  sh "git clone ${env.Newurl}"
-//				  sh "ls -l"
-//                }
-//                sh "pwd"
+                dir('/tmp/jenkins-temp') {
+                    sh "pwd"
+		    sh "git clone ${env.Newurl}"
+		    sh "ls -l"
+//              }
+                sh "pwd"
             }
         }
         stage('Migrate from Mainframe') {
