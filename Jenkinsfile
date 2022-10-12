@@ -6,7 +6,7 @@ pipeline {
       string defaultValue: 'Jayesh-Graytitude',description: 'Enter your git username', name: 'USER', trim: true
       password defaultValue: '', description: 'Enter TOKEN for your Git repository', name: 'TOKEN'
 	  choice choices: ['true', 'false'], name: 'PublicRepo'
-      }
+    }
     stages {
         stage('Create New Repo') {
             steps {
@@ -19,9 +19,8 @@ pipeline {
 					   "auto_init":"true","public":"'$PublicRepo'"}' | grep -m 1 clone \
 					   | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                     '''
-//	    }	
+            }	
         }
-    }
         stage('Clone Repo to USS') {
 // Jayesh - Update the script to change the user who can access the desired path on USS from Jenkins credentials
 // Also add logic to clone private repos using the credentials
@@ -30,13 +29,13 @@ pipeline {
                     env.Newurl = readFile 'temp.txt'
                 }
                 echo "${env.Newurl}"
-		sh "pwd"
+		        sh "pwd"
 //				sh "rm -r '$RepoName'"
 //				sh "mkdir '$RepoName'"
                 dir('/tmp/jenkins-temp') {
                     sh "pwd"
-		    sh "git clone ${env.Newurl}"
-		    sh "ls -l"
+		            sh "git clone ${env.Newurl}"
+		            sh "ls -l"
 //              }
                 sh "pwd"
             }
@@ -49,3 +48,4 @@ pipeline {
             }
         }
     }
+}
