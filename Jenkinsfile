@@ -32,7 +32,7 @@ pipeline {
 				sh "pwd"
 //				sh "rm -r '$RepoName'"
 //				sh "mkdir '$RepoName'"
-                  dir('$Newpath') {
+                  dir('${Newpath}') {
 //                  sh "pwd"
 				    sh "git clone ${env.Newurl}"
 //				    sh "ls -l"
