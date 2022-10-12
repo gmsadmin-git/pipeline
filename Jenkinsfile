@@ -19,9 +19,9 @@ pipeline {
 					   "auto_init":"true","public":"'$PublicRepo'"}' | grep -m 1 clone \
 					   | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
                     '''
-//				}	
-            }
+//	    }	
         }
+    }
         stage('Clone Repo to USS') {
 // Jayesh - Update the script to change the user who can access the desired path on USS from Jenkins credentials
 // Also add logic to clone private repos using the credentials
@@ -49,4 +49,3 @@ pipeline {
             }
         }
     }
-}
