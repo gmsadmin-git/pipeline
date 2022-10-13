@@ -29,7 +29,7 @@ pipeline {
 					sh '''
 						if [ -d "${RepoName}" ]; then
 							echo "Directory ${DIR} is already present ..."
-							sudo -s rm -r "${RepoName}"
+							rm -r "${RepoName}"
 						else
 							echo "Good to clone.."
 						fi
