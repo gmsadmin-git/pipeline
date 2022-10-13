@@ -6,7 +6,7 @@ pipeline {
 		choice choices: ['true', 'false'], name: 'PublicRepo'
 	}
 	stages {
-		stage('Create New Repo') {
+/*		stage('Create New Repo') {
 			steps {
 				echo "Creating new repo ${RepoName}"
 				withCredentials([usernamePassword(credentialsId: 'MyGitHub', passwordVariable: 'SECRET', usernameVariable: 'USER')]) {
@@ -18,7 +18,7 @@ pipeline {
 				'''
 				}
 			}
-		}
+		} */
 		stage('Clone to USS') {
 			steps {
 				script {
@@ -26,6 +26,9 @@ pipeline {
 				}
 				echo "${env.Newurl}"
 				dir("${Newpath}") {
+					if [ -d "${RepoName}" ]; then
+						echo "Directory ${DIR} is already present ..."
+					fi
 					sh "git clone ${env.Newurl}"
 				}
 			}
