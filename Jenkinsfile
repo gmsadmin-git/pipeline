@@ -29,6 +29,9 @@ pipeline {
 					sh '''
 						if [ -d "${RepoName}" ]; then
 							echo "Directory ${DIR} is already present ..."
+							sudo rm -r "${RepoName}"
+						else
+							echo "Good to clone.."
 						fi
 					'''	
 					sh "git clone ${env.Newurl}"
