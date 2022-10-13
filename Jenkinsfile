@@ -43,5 +43,10 @@ pipeline {
 				echo 'Migrating....'
 			}
 		}
+		stage('Clean Worspace') {
+			steps {
+				cleanWs()
+			}
+		}
 	}
 }
