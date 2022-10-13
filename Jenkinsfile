@@ -17,7 +17,7 @@ pipeline {
                 echo "My secret text is '${SECRET}'"
 				}
                     sh '''
-                       curl -X POST -u ${USER}:${SECRET} https://api.github.com/user/repos \
+                       curl -X POST -u ${USER}:'${SECRET}' https://api.github.com/user/repos \
                        -d '{"name": "'$RepoName'","description":"Creating new repository '$RepoName'", \
 					   "auto_init":"true","public":"'$PublicRepo'"}' | grep -m 1 clone \
 					   | grep -Eo "(http|https)://[a-zA-Z0-9./?=_%:-]*" > temp.txt
