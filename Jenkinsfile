@@ -32,7 +32,7 @@ pipeline {
 		}
 		stage('Migrate from Mainframe') {
 			steps {
-				echo 'Migrating'
+				echo 'Migrating....'
 			}
 		}
 	}
