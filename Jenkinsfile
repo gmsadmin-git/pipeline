@@ -26,9 +26,11 @@ pipeline {
 				}
 				echo "${env.Newurl}"
 				dir("${Newpath}") {
-					if [ -d "${RepoName}" ]; then
-						echo "Directory ${DIR} is already present ..."
-					fi
+					sh '''
+						if [ -d "${RepoName}" ]; then
+							echo "Directory ${DIR} is already present ..."
+						fi
+					'''	
 					sh "git clone ${env.Newurl}"
 				}
 			}
