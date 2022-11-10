@@ -4,13 +4,11 @@ pipeline {
 		stage('Stage1') {
 			steps {
 				echo "Jayesh - stage1"
-				}
 			}
 		} 
 		stage('Stage2') {
 			steps {
 				echo "Jayesh - stage2"
-				}
 			}
 		}
 		stage('Stage3') {
