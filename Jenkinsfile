@@ -1,6 +1,5 @@
 pipeline {
 	agent {label 'sandbox'}
-	}
 	stages {
 		stage('Stage1') {
 			steps {
