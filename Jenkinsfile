@@ -1,8 +1,10 @@
 // Agent labels
 def zOsAgentLabel = 'sandbox'
 //def gitUrl = 'gitUrl'
-def gitUrl = 'MortgageApplication'
-def gitApp = 'gitApp'
+def gitUrl = "https://github.com/Jayesh-Graytitude/MortgageApplication.git"
+//def gitApp = 'gitApp'
+def gitApp = "MortgageApplication"
+def appGitBranch = "feature/Test-demo"
 //def dbbHlq = 'dbbHlq'
 def dbbHlq = "ADCDMST.DBB1"
 def ucdApplication = 'ucdApplication'
@@ -10,12 +12,12 @@ def ucdComponent = 'ucdComponent'
 def ucdProcess = 'ucdProcess'
 def ucdEnv = 'ucdEnv'
 // Other static variables
-def Gitcredentials = "ADCDMST"
+def Gitcredentials = "d1ad82f8-5d28-40c6-94d9-033d8705f812"
 def JENKINSWS = "/slocal/devops/usr/lpp/IBM/jenkins/agent/e2e-pipeline/workspace"
 def zAppbuildScripts = "/u/gmszfs/zAppbuild"
 def ucdPackageScripts = "$JENKINSWS/ucd-package-scripts"
 def appWorkspace = "/u/gmszfs/app-workspace"
-def hasBuildFiles = 'true'
+def hasBuildFiles = "true"
 def dbbBuildType = "--fullBuild"
 def dbbBuildOpts = ""
 def dbbGroovyzOpts= ''
@@ -41,7 +43,7 @@ pipeline {
             steps {
                 script{
                  // DBB Build command using Shared Daemon
-                    sh "$DBB_HOME/bin/groovyz ${zAppbuildScripts}/build.groovy \
+                    sh "$DBB_HOME/bin/groovyz  -DBB_PERSONAL_DAEMON ${zAppbuildScripts}/build.groovy \
                     --workspace ${appWorkspace} --application ${env.gitApp} --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
                     --hlq ${env.dbbHlq} ${dbbBuildType} ${dbbBuildOpts}"
 
