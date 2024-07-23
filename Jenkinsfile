@@ -34,8 +34,8 @@ pipeline {
 //        }
         stage('Clone Application Repository') {
             steps {
-                dir("${appWorkspace}/${env.gitApp}") {
-                     git branch: appGitBranch, credentialsId: Gitcredentials, url: env.gitUrl
+                dir("${appWorkspace}/${gitApp}") {
+                     git branch: appGitBranch, credentialsId: Gitcredentials, url: gitUrl
                 }
             }
         }
@@ -44,8 +44,8 @@ pipeline {
                 script{
                  // DBB Build command using Shared Daemon
                     sh "$DBB_HOME/bin/groovyz  -DBB_PERSONAL_DAEMON ${zAppbuildScripts}/build.groovy \
-                    --workspace ${appWorkspace} --application ${env.gitApp} --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
-                    --hlq ${env.dbbHlq} ${dbbBuildType} ${dbbBuildOpts}"
+                    --workspace ${appWorkspace} --application ${gitApp} --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
+                    --hlq ${dbbHlq} ${dbbBuildType} ${dbbBuildOpts}"
 
                 // Do not process 'Packaging' and 'UCD Deploy' steps if the build list is empty
                     def files = findFiles(glob: "**BUILD-${BUILD_NUMBER}/**/buildList.txt")
