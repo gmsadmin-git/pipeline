@@ -106,7 +106,7 @@ pipeline {
                 script{
                  // DBB Build command using Shared Daemon
                     sh "$DBB_HOME/bin/groovyz  -DBB_PERSONAL_DAEMON ${env.zAppbuildScripts}/build.groovy \
-                    --workspace ${env.appWorkspace} --application ${env.gitAppName} --outDir ${env.jenkinsWs}/BUILD-${BUILD_NUMBER}/ \
+                    --workspace ${env.appWorkspace} --application ${env.gitAppName} --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
                     --hlq ${env.dbbHlq} ${env.dbbBuildType} ${dbbBuildOpts}"
 
                 // Do not process 'Packaging' and 'UCD Deploy' steps if the build list is empty
