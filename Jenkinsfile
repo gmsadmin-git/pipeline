@@ -64,6 +64,7 @@ pipeline {
                     env.jenkinsBuildJob = appMap[jenkinsBuildJob]
                     env.zAppbuildScripts = appMap[zAppbuildScripts]
                     env.zAppbuildBranch = appMap[zAppbuildBranch]
+                    env.zAppRepo = appMap[zAppRepo]
 //                    
                     echo "env.appGitBranch : ${env.appGitBranch}"
                     echo "env.appWorkspace : ${env.appWorkspace}"
@@ -72,7 +73,9 @@ pipeline {
                     echo "env.gitCredentials : ${env.gitCredentials}"
                     echo "env.gitUrl : ${env.gitUrl}"
                     echo "env.jenkinsBuildJob : ${env.jenkinsBuildJob}"                    
-                    echo "env.zAppbuildScripts : ${env.zAppbuildScripts}"                    
+                    echo "env.zAppbuildScripts : ${env.zAppbuildScripts}"
+                    echo "env.zAppbuildBranch : ${env.zAppbuildBranch}"                    
+                    echo "env.zAppRepo : ${env.zAppRepo}"                    
 //
                 }
             }
