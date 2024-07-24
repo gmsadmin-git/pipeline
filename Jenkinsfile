@@ -1,34 +1,22 @@
-// Agent labels
+// Variables
 def zOsAgentLabel = ''
-//def zOsAgentLabel = 'zOsAgentLabel'
-//def zOsAgentLabel = 'sandbox'
 def gitUrl = 'gitUrl'
-//def gitUrl = "https://github.com/Jayesh-Graytitude/MortgageApplication.git"
 def gitAppName = 'gitAppName'
-//def gitAppName = "MortgageApplication"
 def appGitBranch = 'appGitBranch'
-//def appGitBranch = "feature/Test-demo"
 def dbbHlq = 'dbbHlq'
-//def dbbHlq = "ADCDMST.DBB1"
-// Other static variables
 def gitCredentials = 'gitCredentials'
-//def gitCredentials = "Jayesh-Github"
-//def jenkinsWs = 'jenkinsWs'
 def zAppbuildScripts = 'zAppbuildScripts'
-//def zAppbuildScripts = "/u/gmszfs/zAppbuild"
 def appWorkspace = 'appWorkspace'
-//def appWorkspace = "/u/gmszfs/app-workspace"
 def jenkinsBuildJob = 'jenkinsBuildJob'
-def jenkinsWs = 'jenkinsWs'
-def hasBuildFiles = "true"
+def zAppbuildBranch = 'zAppbuildBranch'
+def zAppRepo = 'zAppRepo'
+def zAppWorkspace = 'zAppWorkspace'
+def hasBuildFiles = 'true'
 def dbbBuildType = ''
-//def dbbBuildType = '--fullBuild'
 def dbbBuildOpts = ''
 def JobName = ''
 def zosAgentEnv =''
 def action =''
-//def dbbGroovyzOpts= ''
-//def buildOutFolder = ''
 //
 pipeline {
     agent { label 'built-in' }
@@ -41,10 +29,10 @@ pipeline {
                     appAction = fullJobName.split('/')[1]
                     env.gitAppName = appAction.split('-')[0]
                     env.action = appAction.split('-')[1]
-                    echo "zosAgentEnv : ${env.zosAgentEnv}"
-                    echo "appAction : ${appAction}"
-                    echo "gitAppName : ${env.gitAppName}"
-                    echo "action : ${env.action}"
+                    //echo "zosAgentEnv : ${env.zosAgentEnv}"
+                    //echo "appAction : ${appAction}"
+                    //echo "gitAppName : ${env.gitAppName}"
+                    //echo "action : ${env.action}"
                     
                     env.dbbBuildType = params.dbbBuildType                    
                 }
@@ -78,7 +66,8 @@ pipeline {
                     env.jenkinsWs = appMap[jenkinsWs]
                     env.jenkinsBuildJob = appMap[jenkinsBuildJob]
                     env.zAppbuildScripts = appMap[zAppbuildScripts]
-                    
+                    env.zAppbuildBranch = appMap[zAppbuildBranch]
+//                    
                     echo "env.appGitBranch : ${env.appGitBranch}"
                     echo "env.appWorkspace : ${env.appWorkspace}"
                     echo "env.dbbHlq : ${env.dbbHlq}"
@@ -92,6 +81,14 @@ pipeline {
                 }
             }
         }
+        stage('Clone zAppbuild Repository') {
+            agent { label "${env.zosAgentEnv}" }        
+            steps {
+                dir("${env.zAppbuildScripts}") {
+                     git branch: env.zAppbuildBranch, credentialsId: env.gitCredentials, url: env.zAppRepo
+                }
+            }
+        }
         stage('Clone Application Repository') {
             agent { label "${env.zosAgentEnv}" }        
             steps {
@@ -99,14 +96,15 @@ pipeline {
                      git branch: env.appGitBranch, credentialsId: env.gitCredentials, url: env.gitUrl
                 }
             }
-        }        
+        }                
         stage('DBB Build') {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
-                 // DBB Build command using Shared Daemon
                     sh "$DBB_HOME/bin/groovyz  -DBB_PERSONAL_DAEMON ${env.zAppbuildScripts}/build.groovy \
-                    --workspace ${env.appWorkspace} --application ${env.gitAppName} --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
+                    --workspace ${env.appWorkspace} \
+                    --application ${env.gitAppName} \
+                    --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
                     --hlq ${env.dbbHlq} ${env.dbbBuildType} ${dbbBuildOpts}"
 
                 // Do not process 'Packaging' and 'UCD Deploy' steps if the build list is empty
