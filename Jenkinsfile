@@ -71,7 +71,7 @@ pipeline {
                     env.appGitBranch = appMap[appGitBranch]
                     env.appWorkspace = appMap[appWorkspace]
                     env.dbbHlq = appMap[dbbHlq]
-                    env.gitAppNameName = appMap[gitAppNameName]
+                    env.gitAppName = appMap[gitAppName]
                     env.gitCredentials = appMap[gitCredentials]
                     env.gitUrl = appMap[gitUrl]
                     env.jenkinsWs = appMap[jenkinsWs]
@@ -81,7 +81,7 @@ pipeline {
                     echo "env.appGitBranch : ${env.appGitBranch}"
                     echo "env.appWorkspace : ${env.appWorkspace}"
                     echo "env.dbbHlq : ${env.dbbHlq}"
-                    echo "env.gitAppNameName : ${env.gitAppNameName}"
+                    echo "env.gitAppName : ${env.gitAppName}"
                     echo "env.gitCredentials : ${env.gitCredentials}"
                     echo "env.gitUrl : ${env.gitUrl}"
                     echo "env.jenkinsWs : ${env.jenkinsWs}"
