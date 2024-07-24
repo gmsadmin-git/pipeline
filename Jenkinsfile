@@ -18,6 +18,7 @@ def zAppbuildScripts = 'zAppbuildScripts'
 //def zAppbuildScripts = "/u/gmszfs/zAppbuild"
 def appWorkspace = 'appWorkspace'
 //def appWorkspace = "/u/gmszfs/app-workspace"
+def jenkinsBuildJob = 'jenkinsBuildJob'
 def jenkinsWs = 'jenkinsWs'
 def hasBuildFiles = "true"
 def dbbBuildType = ''
