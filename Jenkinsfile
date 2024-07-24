@@ -13,7 +13,7 @@ def zAppRepo = 'zAppRepo'
 def zAppWorkspace = 'zAppWorkspace'
 def hasBuildFiles = 'true'
 def dbbBuildType = ''
-def dbbBuildOpts = '--verbose'
+def dbbBuildOpts = ''
 def JobName = ''
 def zosAgentEnv =''
 def action =''
@@ -34,7 +34,8 @@ pipeline {
                     //echo "gitAppName : ${env.gitAppName}"
                     //echo "action : ${env.action}"
                     
-                    env.dbbBuildType = params.dbbBuildType                    
+                    env.dbbBuildType = params.dbbBuildType
+                    env.dbbBuildOpts = params.dbbBuildOpts                    
                 }
 
             }
