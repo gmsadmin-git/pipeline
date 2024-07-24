@@ -61,11 +61,11 @@ pipeline {
                     def envMap = yamlMap["${env.zosAgentEnv}"]
                     echo "Yaml content1: ${envMap}"
 // Application name validation
-                    if (envMap.containsKey("${env.gitAppName}")) {
-                        echo "*** ''${env.gitAppName}' Application found in configuration YAML file"
-                    } else {
-                        echo "***[Error] '${env.gitAppName}' Application not found in configuration YAML file"
-                    }
+//                    if (envMap.containsKey("${env.gitAppName}")) {
+//                        echo "*** '${env.gitAppName}' Application found in configuration YAML file"
+//                    } else {
+//                        echo "***[Error] '${env.gitAppName}' Application not found in configuration YAML file"
+//                    }
 //
                     def appMap = yamlMap["${env.zosAgentEnv}"]["${env.gitAppName}"]
                     env.appGitBranch = appMap[appGitBranch]
