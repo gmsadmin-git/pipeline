@@ -90,6 +90,7 @@ pipeline {
             }
         }
         stage('Clone Application Repository') {
+            agent { label "${env.zosAgentEnv}" }        
             steps {
                 dir("${env.appWorkspace}/${env.gitAppName}") {
                      git branch: env.appGitBranch, credentialsId: env.gitCredentials, url: env.gitUrl
@@ -97,6 +98,7 @@ pipeline {
             }
         }        
         stage('DBB Build') {
+            agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
                  // DBB Build command using Shared Daemon
