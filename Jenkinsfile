@@ -45,10 +45,8 @@ pipeline {
                 script {
                     def yamlContent = readFile('./appConf.yaml')
                     def yamlMap = readYaml(text: yamlContent)
-                    echo "Yaml content : ${yamlMap}"
 //
                     def envMap = yamlMap["${env.zosAgentEnv}"]
-                    echo "Yaml content1: ${envMap}"
 // Application name validation
 //                    if (envMap.containsKey("${env.gitAppName}")) {
 //                        echo "*** '${env.gitAppName}' Application found in configuration YAML file"
@@ -63,7 +61,6 @@ pipeline {
                     env.gitAppName = appMap[gitAppName]
                     env.gitCredentials = appMap[gitCredentials]
                     env.gitUrl = appMap[gitUrl]
-                    env.jenkinsWs = appMap[jenkinsWs]
                     env.jenkinsBuildJob = appMap[jenkinsBuildJob]
                     env.zAppbuildScripts = appMap[zAppbuildScripts]
                     env.zAppbuildBranch = appMap[zAppbuildBranch]
@@ -74,7 +71,6 @@ pipeline {
                     echo "env.gitAppName : ${env.gitAppName}"
                     echo "env.gitCredentials : ${env.gitCredentials}"
                     echo "env.gitUrl : ${env.gitUrl}"
-                    echo "env.jenkinsWs : ${env.jenkinsWs}"
                     echo "env.jenkinsBuildJob : ${env.jenkinsBuildJob}"                    
                     echo "env.zAppbuildScripts : ${env.zAppbuildScripts}"                    
 //
