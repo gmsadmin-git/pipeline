@@ -1,6 +1,6 @@
 // Agent labels
 def zOsAgentLabel = ''
-def zOsAgentLabel = 'zOsAgentLabel'
+//def zOsAgentLabel = 'zOsAgentLabel'
 //def zOsAgentLabel = 'sandbox'
 def gitUrl = 'gitUrl'
 //def gitUrl = "https://github.com/Jayesh-Graytitude/MortgageApplication.git"
