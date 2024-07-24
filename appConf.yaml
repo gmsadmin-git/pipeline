@@ -4,11 +4,11 @@ Development:
         appGitBranch: 'feature/Test-demo'
         appWorkspace: '/u/gmszfs/app-workspace'
         dbbHlq: 'ADCDMST.DBBDEV'
-        gitAppNameName: 'MortgageApplication'
+        gitAppName: 'MortgageApplication'
         gitCredentials: 'Jayesh-Github'
         gitUrl: 'https://github.com/Jayesh-Graytitude/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
-        jenkinsWs: '/u/gmszfs/Jenkins/workspace/Dev-Pipeline'
+        jenkinsWs: '/u/gmszfs/Jenkins/workspace/Development'
         zAppbuildScripts: '/u/gmszfs/zAppbuild'
 Test:
     MortgageApplication:
@@ -19,5 +19,5 @@ Test:
         gitCredentials: 'Jayesh-Github' 
         gitUrl: 'https://github.com/Jayesh-Graytitude/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
-        jenkinsWs: '/u/gmszfs/Jenkins/workspace/Dev-Pipeline'
+        jenkinsWs: '/u/gmszfs/Jenkins/workspace/Development'
         zAppbuildScripts: '/u/gmszfs/zAppbuild'
