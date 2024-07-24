@@ -54,10 +54,12 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }
             steps {
                 script {
-                    def yamlContent = readFile('appConf.yaml')
+                    def yamlContent = readFile('./appConf.yaml')
                     def yamlMap = readYaml(text: yamlContent)
+                    echo "Yaml content : ${yamlMap}"
 //
                     def envMap = yamlMap["${env.zosAgentEnv}"]
+                    echo "Yaml content1: ${envMap}"
 // Application name validation
                     if (envMap.containsKey("${env.gitAppName}")) {
                         echo "*** ''${env.gitAppName}' Application found in configuration YAML file"
