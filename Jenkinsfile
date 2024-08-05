@@ -29,10 +29,10 @@ pipeline {
                     appAction = fullJobName.split('/')[1]
                     env.gitAppName = appAction.split('-')[0]
                     env.action = appAction.split('-')[1]
-                    //echo "zosAgentEnv : ${env.zosAgentEnv}"
-                    //echo "appAction : ${appAction}"
-                    //echo "gitAppName : ${env.gitAppName}"
-                    //echo "action : ${env.action}"
+                    echo "zosAgentEnv : ${env.zosAgentEnv}"
+                    echo "appAction : ${appAction}"
+                    echo "gitAppName : ${env.gitAppName}"
+                    echo "action : ${env.action}"
                     env.dbbBuildType = params.dbbBuildType
                     env.dbbBuildOpts = params.dbbBuildOpts                    
                 }
