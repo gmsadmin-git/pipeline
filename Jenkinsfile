@@ -33,7 +33,6 @@ pipeline {
                     //echo "appAction : ${appAction}"
                     //echo "gitAppName : ${env.gitAppName}"
                     //echo "action : ${env.action}"
-                    
                     env.dbbBuildType = params.dbbBuildType
                     env.dbbBuildOpts = params.dbbBuildOpts                    
                 }
