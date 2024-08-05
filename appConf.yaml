@@ -8,9 +8,9 @@ Development:
         gitCredentials: 'Jayesh-Github'
         gitUrl: 'https://github.com/Jayesh-Graytitude/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
-        zAppbuildBranch: 'feature/updates'
-        zAppbuildScripts: '/u/gmszfs/zAppbuild/Development'
-        zAppRepo: 'https://github.com/Jayesh-Graytitude/zAppbuild.git'        
+        zAppbuildBranch: 'feature/gmstest'
+        zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
+        zAppRepo: 'https://github.com/Jayesh-Graytitude/zAppbuild20.git'        
 Test:
     MortgageApplication:
         appGitBranch: 'feature/Test-demo'
@@ -20,6 +20,6 @@ Test:
         gitCredentials: 'Jayesh-Github' 
         gitUrl: 'https://github.com/Jayesh-Graytitude/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
-        zAppbuildBranch: 'feature/updates'        
-        zAppbuildScripts: '/u/gmszfs/zAppbuild/Test'
-        zAppRepo: 'https://github.com/Jayesh-Graytitude/zAppbuild.git'
+        zAppbuildBranch: 'feature/gmstest'        
+        zAppbuildScripts: '/u/gmszfs/zAppbuild20/Test'
+        zAppRepo: 'https://github.com/Jayesh-Graytitude/zAppbuild20.git'
