@@ -29,10 +29,10 @@ pipeline {
                     appAction = fullJobName.split('/')[1]
                     env.gitAppName = appAction.split('-')[0]
                     env.action = appAction.split('-')[1]
-                    echo "zosAgentEnv : ${env.zosAgentEnv}"
-                    echo "appAction : ${appAction}"
-                    echo "gitAppName : ${env.gitAppName}"
-                    echo "action : ${env.action}"
+                  //  echo "zosAgentEnv : ${env.zosAgentEnv}"
+                  //  echo "appAction : ${appAction}"
+                  //  echo "gitAppName : ${env.gitAppName}"
+                  //  echo "action : ${env.action}"
                     env.dbbBuildType = params.dbbBuildType
                     env.dbbBuildOpts = params.dbbBuildOpts                    
                 }
@@ -66,16 +66,16 @@ pipeline {
                     env.zAppbuildBranch = appMap[zAppbuildBranch]
                     env.zAppRepo = appMap[zAppRepo]
 //                    
-                    echo "env.appGitBranch : ${env.appGitBranch}"
-                    echo "env.appWorkspace : ${env.appWorkspace}"
-                    echo "env.dbbHlq : ${env.dbbHlq}"
-                    echo "env.gitAppName : ${env.gitAppName}"
-                    echo "env.gitCredentials : ${env.gitCredentials}"
-                    echo "env.gitUrl : ${env.gitUrl}"
-                    echo "env.jenkinsBuildJob : ${env.jenkinsBuildJob}"                    
-                    echo "env.zAppbuildScripts : ${env.zAppbuildScripts}"
-                    echo "env.zAppbuildBranch : ${env.zAppbuildBranch}"                    
-                    echo "env.zAppRepo : ${env.zAppRepo}"                    
+                  //  echo "env.appGitBranch : ${env.appGitBranch}"
+                  //  echo "env.appWorkspace : ${env.appWorkspace}"
+                  //  echo "env.dbbHlq : ${env.dbbHlq}"
+                  //  echo "env.gitAppName : ${env.gitAppName}"
+                  //  echo "env.gitCredentials : ${env.gitCredentials}"
+                  //  echo "env.gitUrl : ${env.gitUrl}"
+                  //  echo "env.jenkinsBuildJob : ${env.jenkinsBuildJob}"                    
+                  //  echo "env.zAppbuildScripts : ${env.zAppbuildScripts}"
+                  //  echo "env.zAppbuildBranch : ${env.zAppbuildBranch}"                    
+                  //  echo "env.zAppRepo : ${env.zAppRepo}"                    
 //
                 }
             }
@@ -100,7 +100,7 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
-                    sh "$DBB_HOME/bin/groovyz -DBB_PERSONAL_DAEMON ${env.zAppbuildScripts}/build.groovy \
+                    sh "$DBB_HOME/bin/groovyz ${env.zAppbuildScripts}/build.groovy \
                     --workspace ${env.appWorkspace} \
                     --application ${env.gitAppName} \
                     --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
