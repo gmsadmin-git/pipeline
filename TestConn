@@ -1,0 +1,14 @@
+pipeline {
+    agent { label 'Development' }
+    stages {
+        stage('Test Connection') {
+            steps {
+                script {
+                    echo "GMS Testing"
+                    def fullJobName = "$JOB_NAME"
+                    echo "Jenkins Job Name : $fullJobName"
+                }
+            }
+        }
+    }
+}
