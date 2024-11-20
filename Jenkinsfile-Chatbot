@@ -95,7 +95,8 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 dir("${env.appWorkspace}/${env.gitAppName}") {
-                     git branch: env.appGitBranch, credentialsId: env.gitCredentials, url: env.gitUrl
+                     git branch: env.gitBranch, credentialsId: env.gitCredentials, url: env.gitUrl
+                 //  git branch: env.appGitBranch, credentialsId: env.gitCredentials, url: env.gitUrl
                 }
             }
         }                
