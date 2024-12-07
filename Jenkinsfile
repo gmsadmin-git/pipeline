@@ -100,7 +100,7 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
-                    sh "$DBB_HOME/bin/groovyz ${env.zAppbuildScripts}/build.groovy \
+                    sh "$DBB_HOME/bin/groovyz -DBB_PERSONAL_DAEMON ${env.zAppbuildScripts}/build.groovy \
                     --workspace ${env.appWorkspace} \
                     --application ${env.gitAppName} \
                     --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
