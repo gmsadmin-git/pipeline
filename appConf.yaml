@@ -3,7 +3,7 @@ Development:
     MortgageApplication:
         appGitBranch: 'main'
         appWorkspace: '/u/gmszfs/appWorkspace/Development'
-        dbbHlq: 'GMSRATN.DBBDEV'
+        dbbHlq: 'GMSRATN'
         gitAppName: 'MortgageApplication'
         gitCredentials: 'GMS-GitHub'
         gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
@@ -28,7 +28,7 @@ Main:
     MortgageApplication:
         appGitBranch: 'main'
         appWorkspace: '/u/gmszfs/appWorkspace/main'
-        dbbHlq: 'GMSRATN.DBBDEV'
+        dbbHlq: 'GMSRATN'
         gitAppName: 'MortgageApplication'
         gitCredentials: 'GMS-GitHub'
         gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
