@@ -24,15 +24,8 @@ Test:
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Test'
         zAppRepo: 'https://github.com/gmsadmin-git/zAppbuild20.git'
 
-Main:
-    MortgageApplication:
-        appGitBranch: 'main'
-        appWorkspace: '/u/gmszfs/appWorkspace/main'
-        dbbHlq: 'GMSRATN'
-        gitAppName: 'MortgageApplication'
-        gitCredentials: 'GMS-GitHub'
-        gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
         zAppbuildBranch: 'feature/gmstest'
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
         zAppRepo: 'https://github.com/gmsadmin-git/zAppbuild20.git'
+        
