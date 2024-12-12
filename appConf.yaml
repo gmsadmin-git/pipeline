@@ -22,10 +22,4 @@ Test:
         jenkinsBuildJob: 'MortgageApplication-Build'
         zAppbuildBranch: 'feature/gmstest'        
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Test'
-        zAppRepo: 'https://github.com/gmsadmin-git/zAppbuild20.git'
-
-        jenkinsBuildJob: 'MortgageApplication-Build'
-        zAppbuildBranch: 'feature/gmstest'
-        zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
-        zAppRepo: 'https://github.com/gmsadmin-git/zAppbuild20.git'
-        
+        zAppRepo: 'https://github.com/gmsadmin-git/zAppbuild20.git'        
