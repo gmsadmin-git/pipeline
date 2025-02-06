@@ -1,6 +1,6 @@
 ---
 Development:
-    MortgageApplication:
+    Banking_Demo:
         appGitBranch: 'main'
         appWorkspace: '/u/gmszfs/appWorkspace/Development'
         dbbHlq: 'ADCDMST.BANKDEMO'
@@ -12,7 +12,7 @@ Development:
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
         zAppRepo: 'https://github.com/gmsadmin-git/dbb-zappbuild.git'        
 Test:
-    MortgageApplication:
+    Banking_Demo:
         appGitBranch: 'feature/Test-demo'
         appWorkspace: '/u/gmszfs/appWorkspace/Test'
         dbbHlq: 'ADCDMST.BANKDEMO'
