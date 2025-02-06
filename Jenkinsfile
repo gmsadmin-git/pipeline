@@ -100,7 +100,7 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
-                    sh "/usr/lpp/IBM/dbb/bin/groovyz -DBB_DAEMON_HOST 127.0.0.1 -DBB_DAEMON_PORT ${env.zAppbuildScripts}/build.groovy \
+                    sh "/usr/lpp/IBM/dbb/bin/groovyz -DBB_DAEMON_HOST 127.0.0.1 7380-DBB_DAEMON_PORT 7380 ${env.zAppbuildScripts}/build.groovy \
                     --workspace ${env.appWorkspace} \
                     --application ${env.gitAppName} \
                     --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
