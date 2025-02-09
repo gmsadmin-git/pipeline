@@ -2,7 +2,7 @@
 Development:
     Banking_Demo:
         appGitBranch: 'main'
-        appWorkspace: '/u/gmszfs/appWorkspace/Development'
+        appWorkspace: '/tmp/appWorkspace/Development'
         dbbHlq: 'ADCDMST.BANKDEMO'
         gitAppName: 'Banking_Demo'
         gitCredentials: 'GMS-GitHub'
