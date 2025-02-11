@@ -100,6 +100,7 @@ pipeline {
             agent { label "${env.zosAgentEnv}" }        
             steps {
                 script{
+                    sh '. . /u/gmszfs/Jenkinsgms/workspace/Development/MortgageApplication-Build/buildfile.sh'
                     sh "/usr/lpp/IBM/dbb/bin/groovyz -DBB_DAEMON_HOST 127.0.0.1 -DBB_DAEMON_PORT 7380 ${env.zAppbuildScripts}/build.groovy \
                     --workspace ${env.appWorkspace} \
                     --hlq ${env.dbbHlq} \
