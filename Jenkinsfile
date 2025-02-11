@@ -102,9 +102,10 @@ pipeline {
                 script{
                     sh "/usr/lpp/IBM/dbb/bin/groovyz -DBB_DAEMON_HOST 127.0.0.1 -DBB_DAEMON_PORT 7380 ${env.zAppbuildScripts}/build.groovy \
                     --workspace ${env.appWorkspace} \
+                    --hlq ${env.dbbHlq} \
+                    --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
                     --application ${env.gitAppName} \
-                    --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
-                    --hlq ${env.dbbHlq} ${env.dbbBuildType} ${env.dbbBuildOpts}"
+                    --logEncoding UTF-8 ${env.dbbBuildOpts} ${env.dbbBuildType}"
 
                 // Do not process 'Packaging' and 'UCD Deploy' steps if the build list is empty
                     def files = findFiles(glob: "**BUILD-${BUILD_NUMBER}/**/buildList.txt")
