@@ -104,7 +104,8 @@ pipeline {
                     --workspace ${env.appWorkspace} \
                     --application ${env.gitAppName} \
                     --outDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
-                    --hlq ${env.dbbHlq} ${env.dbbBuildType} ${env.dbbBuildOpts}"
+                    --hlq ${env.dbbHlq} \
+                    --${env.dbbBuildType} ${env.dbbBuildOpts}"
 
                 // Do not process 'Packaging' and 'UCD Deploy' steps if the build list is empty
                     def files = findFiles(glob: "**BUILD-${BUILD_NUMBER}/**/buildList.txt")
