@@ -110,7 +110,7 @@ pipeline {
                     --hlq ${env.dbbHlq} \
                     --workDir ${WORKSPACE}/BUILD-${BUILD_NUMBER}/ \
                     --application ${env.gitAppName} \
-                    --logEncoding UTF-8 ${env.dbbBuildOpts} ${env.dbbBuildType}"
+                    --logEncoding UTF-8 ${env.dbbBuildType} ${env.dbbBuildOpts}"
 
                  // --hlq ${env.dbbHlq} ${env.dbbBuildType} ${env.dbbBuildOpts}"
 
