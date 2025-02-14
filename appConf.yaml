@@ -1,25 +1,25 @@
 ---
 Development:
-    MortgageApplication:
+    Banking_Demo:
         appGitBranch: 'main'
         appWorkspace: '/tmp/appWorkspace/Development'
-        dbbHlq: 'ADCDMST.MORTGAGE'
-        gitAppName: 'MortgageApplication'
+        dbbHlq: 'ADCDMST.BANKDEMO'
+        gitAppName: 'Banking_Demo'
         gitCredentials: 'GMS-GitHub'
-        gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
-        jenkinsBuildJob: 'MortgageApplication-Build'
+        gitUrl: 'https://github.com/gmsadmin-git/Banking_Demo.git'
+        jenkinsBuildJob: 'Banking_Demo-Build'
         zAppbuildBranch: 'feature/gmstest'
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
         zAppRepo: 'https://github.com/gmsadmin-git/dbb-zappbuild.git'        
 Test:
-    MortgageApplication:
+    Banking_Demo:
         appGitBranch: 'feature/Test-demo'
         appWorkspace: '/u/gmszfs/appWorkspace/Test'
-        dbbHlq: 'ADCDMST.MORTGAGE'
-        gitAppName: 'MortgageApplication'
+        dbbHlq: 'ADCDMST.BANKDEMO'
+        gitAppName: 'Banking_Demo'
         gitCredentials: 'GMS-GitHub' 
-        gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
-        jenkinsBuildJob: 'MortgageApplication-Build'
+        gitUrl: 'https://github.com/gmsadmin-git/Banking_Demo.git'
+        jenkinsBuildJob: 'Banking_Demo-Build'
         zAppbuildBranch: 'feature/gmstest'        
         zAppbuildScripts: '/u/gmszfs/zAppbuild20/Test'
         zAppRepo: 'https://github.com/gmsadmin-git/dbb-zappbuild.git'        
