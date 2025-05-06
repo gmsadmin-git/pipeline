@@ -2,8 +2,8 @@
 Development:
     Banking_Demo:
         appGitBranch: 'main'
-        appWorkspace: '/tmp/appWorkspace/Development'
-        dbbHlq: 'ADCDMST.BANKDEMO'
+        appWorkspace: '/u/workspace/Development'
+        dbbHlq: 'GMSNID.BANKDEMO'
         gitAppName: 'Banking_Demo'
         gitCredentials: 'GMS-GitHub'
         gitUrl: 'https://github.com/gmsadmin-git/Banking_Demo.git'
