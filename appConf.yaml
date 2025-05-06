@@ -2,8 +2,8 @@
 Development:
     MortgageApplication:
         appGitBranch: 'main'
-        appWorkspace: '/tmp/appWorkspace/Development'
-        dbbHlq: 'ADCDMST.MORTGAGE'
+        appWorkspace: '/u/workspace/Development'
+        dbbHlq: 'GMSNID.MORTGAGE'
         gitAppName: 'MortgageApplication'
         gitCredentials: 'GMS-GitHub'
         gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
