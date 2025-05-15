@@ -9,7 +9,7 @@ Development:
         gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
         zAppbuildBranch: 'feature/gmstest'
-        zAppbuildScripts: '/u/gmszfs/zAppbuild20/Development'
+        zAppbuildScripts: '/u/workspace/zAppbuild20/Development'
         zAppRepo: 'https://github.com/gmsadmin-git/dbb-zappbuild.git'        
 Test:
     MortgageApplication:
@@ -21,5 +21,5 @@ Test:
         gitUrl: 'https://github.com/gmsadmin-git/MortgageApplication.git'
         jenkinsBuildJob: 'MortgageApplication-Build'
         zAppbuildBranch: 'feature/gmstest'        
-        zAppbuildScripts: '/u/gmszfs/zAppbuild20/Test'
+        zAppbuildScripts: '/u/workspace/zAppbuild20/Test'
         zAppRepo: 'https://github.com/gmsadmin-git/dbb-zappbuild.git'        
