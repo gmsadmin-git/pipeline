@@ -1,7 +1,7 @@
 ---
 Development:
     Banking_Demo:
-        appGitBranch: 'feature/testingfeopoc'
+        appGitBranch: 'feature/fepoc'
         appWorkspace: '/u/workspace/Development'
         dbbHlq: 'ADCDMST.BANKDEMO'
         gitAppName: 'Banking_Demo'
